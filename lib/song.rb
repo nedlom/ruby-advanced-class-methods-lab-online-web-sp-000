@@ -45,15 +45,15 @@ class Song
   
   def self.new_from_filename(filename)
     song = self.new
-    song.artist_name = filename.split(/[-.]/)[0].strip
-    song.name = filename.split(/[-.]/)[1].strip
+    song.artist_name = filename.split(/( - )|[.]/)[0]
+    song.name = filename.split(/(?: - )|[.]/)[1]
     song
   end
   
   def self.create_from_filename(filename)
     song = self.new
-    song.artist_name = filename.split(/[-.]/)[0].strip
-    song.name = filename.split(/[-.]/)[1].strip
+    song.artist_name = filename.split(/( - )|[.]/)[0]
+    song.name = filename.split(/(?: - )|[.]/)[1]
     self.all << song
     song
   end
