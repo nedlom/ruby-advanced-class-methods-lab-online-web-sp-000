@@ -1,13 +1,11 @@
 class Song
+  
   attr_accessor :name, :artist_name
+  
   @@all = []
 
   def self.all
     @@all
-  end
-  
-   def save
-    self.class.all << self
   end
   
   def self.create
@@ -30,7 +28,7 @@ class Song
   end
 
   def self.find_by_name(name_of_song)
-    self.all.find{|i| i.name == name_of_song}
+    self.all.detect{|i| i.name == name_of_song}
   end
   
   def self.find_or_create_by_name(name_of_song)
@@ -47,19 +45,15 @@ class Song
   
   def self.new_from_filename(filename)
     song = self.new
-    artist_name = filename.split(/[-.]/)[0].strip
-    song_name = filename.split(/[-.]/)[1].strip
-    song.name = song_name
-    song.artist_name = artist_name
+    song.artist_name = filename.split(/[-.]/)[0].strip
+    song.name = filename.split(/[-.]/)[1].strip
     song
   end
   
   def self.create_from_filename(filename)
     song = self.new
-    artist_name = filename.split(/[-.]/)[0].strip
-    song_name = filename.split(/[-.]/)[1].strip
-    song.name = song_name
-    song.artist_name = artist_name
+    song.artist_name = filename.split(/[-.]/)[0].strip
+    song.name = filename.split(/[-.]/)[1].strip
     self.all << song
     song
   end
