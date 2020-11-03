@@ -1,5 +1,4 @@
 class Song
-  
   attr_accessor :name, :artist_name
   
   @@all = []
@@ -136,9 +135,8 @@ end
 #   def self.destroy_all
 #     self.all.clear
 #   end
-  
 # end
-  
+# class Song
 #   attr_accessor :name, :artist_name
   
 #   @@all = []
@@ -200,5 +198,4 @@ end
 #   def self.destroy_all
 #     self.all.clear
 #   end
-
 # end
