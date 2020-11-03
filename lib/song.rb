@@ -32,9 +32,7 @@ class Song
   end
   
   def self.alphabetical
-    binding.pry
-    self.all.sort {|s| s.name}
-    #self.all.sort {|a, b| a.name <=> b.name}
+    self.all.sort {|a, b| a.name <=> b.name}
   end
   
   def self.new_from_filename(filename)
